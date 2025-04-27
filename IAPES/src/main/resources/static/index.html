@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/_next/static/css/e046beca5e33b633.css" data-precedence="next"/>
+    <link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/webpack-985fd61a63a804c3.js"/>
+    <script src="/_next/static/chunks/4bd1b696-7b4d24c32c823051.js" async=""></script>
+    <script src="/_next/static/chunks/684-9e427af6999aa06b.js" async=""></script>
+    <script src="/_next/static/chunks/main-app-5c384ece47ae36ad.js" async=""></script>
+    <script src="/_next/static/chunks/650-06917b1dad977b3d.js" async=""></script>
+    <script src="/_next/static/chunks/874-eab1d44d4ab8f06d.js" async=""></script>
+    <script src="/_next/static/chunks/847-bec0586593654b13.js" async=""></script>
+    <script src="/_next/static/chunks/633-8e6ad4fa3651a343.js" async=""></script>
+    <script src="/_next/static/chunks/app/layout-407395fa59b37eeb.js" async=""></script>
+    <script src="/_next/static/chunks/890-61fade20c36210a2.js" async=""></script>
+    <script src="/_next/static/chunks/app/page-229433744b094fb7.js" async=""></script>
+    <title>IAPES Prep - Pre-ICFES Simulator</title>
+    <meta name="description" content="Your partner in preparing for the ICFES Saber 11 test."/>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"/>
+    <script>document.querySelectorAll('body link[rel="icon"], body link[rel="apple-touch-icon"]').forEach(el => document.head.appendChild(el))</script>
+    <script src="/_next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
+</head>
+<body class="__className_e8ce0c antialiased">
+<header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div class="container flex h-14 max-w-screen-2xl items-center justify-between px-4 md:px-6">
+        <div class="flex items-center">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden mr-2"
+                    type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-«R1bb»"
+                    data-state="closed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-menu h-5 w-5">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+                <span class="sr-only">Toggle Menu</span></button>
+            <a class="hidden md:flex items-center space-x-2" href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-house h-7 w-7 text-primary text-shadow-neon-primary">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                    <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span class="font-bold text-xl sm:inline-block">IAPES Prep</span></a></div>
+        <div class="md:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"><a
+                class="flex items-center space-x-1.5" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                 class="lucide lucide-house h-5 w-5 text-primary text-shadow-neon-primary">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            </svg>
+            <span class="font-semibold text-md">IAPES Prep</span></a></div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent w-9 h-9 text-primary hover:text-primary/90 text-shadow-neon-primary"
+                    type="button" id="radix-«R1rb»" aria-haspopup="menu" aria-expanded="false" data-state="closed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-globe h-[1.2rem] w-[1.2rem]">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
+                </svg>
+                <span class="sr-only">Change language</span></button>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground w-9 h-9 text-primary text-shadow-neon-primary"
+                    disabled="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="lucide lucide-sun h-[1.2rem] w-[1.2rem]">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+            </button>
+            <a href="/login">
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground w-9 h-9"
+                        aria-label="Login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-user h-5 w-5 text-primary text-shadow-neon-primary">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </a></div>
+    </div>
+</header>
+<main class="flex flex-col min-h-screen">
+    <section class="py-16 md:py-24 lg:py-32 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div><h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary text-shadow-neon-primary">
+                    Unlock Your ICFES Potential</h1>
+                    <p class="text-lg md:text-xl text-muted-foreground mb-8">Your Slogan Here: Master the Pre-ICFES
+                        Saber 11 with IAPES Prep. Personalized feedback and expert guidance.</p>
+                    <div class="flex space-x-4"><a href="/login">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon-primary h-11 rounded-md px-8">
+                            Login
+                        </button>
+                    </a><a href="/register">
+                        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8">
+                            Register
+                        </button>
+                    </a></div>
+                </div>
+                <div class="hidden md:flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-dog w-48 h-48 lg:w-64 lg:h-64 text-primary opacity-75 text-shadow-neon-primary">
+                        <path d="M11.25 16.25h1.5L12 17z"></path>
+                        <path d="M16 14v.5"></path>
+                        <path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309"></path>
+                        <path d="M8 14v.5"></path>
+                        <path d="M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 md:py-16 bg-background">
+        <div class="container mx-auto px-4 text-center"><h2
+                class="text-3xl font-bold mb-8 text-primary text-shadow-neon-primary">Discover Our Features</h2>
+            <div class="w-full max-w-5xl mx-auto aspect-[2/1] bg-muted rounded-lg flex items-center justify-center">
+                Loading Carousel...
+            </div>
+        </div>
+    </section>
+    <section class="py-12 md:py-16 bg-secondary/50">
+        <div class="container mx-auto px-4">
+            <div class="rounded-lg bg-card text-card-foreground shadow-xl border border-primary/30 hover:border-primary/60 transition-colors duration-300 shadow-neon-primary overflow-hidden">
+                <div class="flex flex-col space-y-1.5 p-6 text-center">
+                    <div class="tracking-tight text-3xl font-bold text-primary text-shadow-neon-primary">Why Choose
+                        IAPES Prep?
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="p-6 px-4 py-8 md:px-16 min-h-[400px]"><p
+                            class="text-lg text-muted-foreground mb-8 text-center max-w-3xl mx-auto">IAPES Prep is more
+                        than just a test simulator. We are your dedicated partner in achieving success
+                        in the ICFES Saber 11 exam. Our platform is designed to provide you with the tools, insights,
+                        and support you need to excel.</p>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="flex items-start space-x-3 p-4 bg-background rounded-lg shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-circle-check-big h-6 w-6 text-primary flex-shrink-0 mt-1 text-shadow-neon-primary">
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <p class="text-foreground">Realistic ICFES Saber 11 simulations.</p></div>
+                            <div class="flex items-start space-x-3 p-4 bg-background rounded-lg shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-circle-check-big h-6 w-6 text-primary flex-shrink-0 mt-1 text-shadow-neon-primary">
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <p class="text-foreground">AI-powered personalized feedback to pinpoint improvement
+                                    areas.</p></div>
+                            <div class="flex items-start space-x-3 p-4 bg-background rounded-lg shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-circle-check-big h-6 w-6 text-primary flex-shrink-0 mt-1 text-shadow-neon-primary">
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <p class="text-foreground">Comprehensive question bank covering all subjects.</p></div>
+                            <div class="flex items-start space-x-3 p-4 bg-background rounded-lg shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-circle-check-big h-6 w-6 text-primary flex-shrink-0 mt-1 text-shadow-neon-primary">
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <p class="text-foreground">Track your progress with detailed analytics.</p></div>
+                            <div class="flex items-start space-x-3 p-4 bg-background rounded-lg shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-circle-check-big h-6 w-6 text-primary flex-shrink-0 mt-1 text-shadow-neon-primary">
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <p class="text-foreground">Flexible study plans tailored to your needs.</p></div>
+                            <div class="flex items-start space-x-3 p-4 bg-background rounded-lg shadow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round"
+                                     class="lucide lucide-circle-check-big h-6 w-6 text-primary flex-shrink-0 mt-1 text-shadow-neon-primary">
+                                    <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                                    <path d="m9 11 3 3L22 4"></path>
+                                </svg>
+                                <p class="text-foreground">User-friendly interface accessible on all devices.</p></div>
+                        </div>
+                    </div>
+                    <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 absolute top-1/2 right-4 transform -translate-y-1/2 z-10 rounded-full border-primary/50 text-primary hover:bg-primary/10 shadow-neon-primary text-shadow-neon-primary"
+                            aria-label="Next Panel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="lucide lucide-chevron-right h-6 w-6">
+                            <path d="m9 18 6-6-6-6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-12 md:py-16 bg-background">
+        <div class="container mx-auto px-4"><h2
+                class="text-3xl font-bold text-center mb-10 text-primary text-shadow-neon-primary">What Our Users
+            Say</h2>
+            <div class="relative">
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 absolute top-1/2 left-0 transform -translate-y-1/2 z-10 rounded-full border-primary/50 text-primary hover:bg-primary/10 text-shadow-neon-primary disabled:opacity-50"
+                        aria-label="Previous testimonial">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-chevron-left h-6 w-6">
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+                <div class="flex overflow-x-auto space-x-6 pb-4 -mx-4 px-4 no-scrollbar">
+                    <div class="rounded-lg bg-card text-card-foreground min-w-[280px] flex-shrink-0 shadow-lg hover:shadow-xl hover:border-primary hover:shadow-neon-primary transition-all duration-300 border border-transparent">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center space-x-3"><span
+                                    class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"><span
+                                    class="flex h-full w-full items-center justify-center rounded-full bg-muted">LV</span></span>
+                                <div>
+                                    <div class="font-semibold tracking-tight text-lg">Laura V.</div>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0"><p class="text-muted-foreground italic">&quot;<!-- -->IAPES Prep helped me
+                            identify my weaknesses and improve my scores significantly. The AI feedback is amazing!
+                            <!-- -->&quot;</p></div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground min-w-[280px] flex-shrink-0 shadow-lg hover:shadow-xl hover:border-primary hover:shadow-neon-primary transition-all duration-300 border border-transparent">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center space-x-3"><span
+                                    class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"><span
+                                    class="flex h-full w-full items-center justify-center rounded-full bg-muted">CR</span></span>
+                                <div>
+                                    <div class="font-semibold tracking-tight text-lg">Carlos R.</div>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-muted-foreground">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0"><p class="text-muted-foreground italic">&quot;<!-- -->The simulations are
+                            very realistic. I felt much more confident on test day. Highly recommend this platform.
+                            <!-- -->&quot;</p></div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground min-w-[280px] flex-shrink-0 shadow-lg hover:shadow-xl hover:border-primary hover:shadow-neon-primary transition-all duration-300 border border-transparent">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center space-x-3"><span
+                                    class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"><span
+                                    class="flex h-full w-full items-center justify-center rounded-full bg-muted">SM</span></span>
+                                <div>
+                                    <div class="font-semibold tracking-tight text-lg">Sofia M.</div>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0"><p class="text-muted-foreground italic">&quot;<!-- -->An excellent tool
+                            for ICFES preparation. The content is thorough and the platform is easy to use.<!-- -->&quot;</p>
+                        </div>
+                    </div>
+                    <div class="rounded-lg bg-card text-card-foreground min-w-[280px] flex-shrink-0 shadow-lg hover:shadow-xl hover:border-primary hover:shadow-neon-primary transition-all duration-300 border border-transparent">
+                        <div class="flex flex-col space-y-1.5 p-6">
+                            <div class="flex items-center space-x-3"><span
+                                    class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full"><span
+                                    class="flex h-full w-full items-center justify-center rounded-full bg-muted">JP</span></span>
+                                <div>
+                                    <div class="font-semibold tracking-tight text-lg">Juan P.</div>
+                                    <div class="flex">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-yellow-400 fill-yellow-400">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                             stroke-linecap="round" stroke-linejoin="round"
+                                             class="lucide lucide-star h-5 w-5 text-muted-foreground">
+                                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6 pt-0"><p class="text-muted-foreground italic">&quot;<!-- -->Great value for
+                            money. The personalized recommendations made a huge difference in my study strategy.<!-- -->&quot;</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 w-10 absolute top-1/2 right-0 transform -translate-y-1/2 z-10 rounded-full border-primary/50 text-primary hover:bg-primary/10 text-shadow-neon-primary disabled:opacity-50"
+                        aria-label="Next testimonial">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="lucide lucide-chevron-right h-6 w-6">
+                        <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer class="py-8 bg-muted text-muted-foreground text-center">
+        <div class="container mx-auto px-4"><p>© <!-- -->2025<!-- --> IAPES Prep. All rights reserved.</p>
+            <p class="text-sm mt-1">Your partner for ICFES Saber 11 success.</p></div>
+    </footer>
+</main><!--$--><!--/$--><!--$--><!--/$-->
+<div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events:none">
+    <ol tabindex="-1"
+        class="fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]"></ol>
+</div>
+<script src="/_next/static/chunks/webpack-985fd61a63a804c3.js" async=""></script>
+<script>(self.__next_f = self.__next_f || []).push([0])</script>
+<script>self.__next_f.push([1, "1:\"$Sreact.fragment\"\n2:I[52612,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\"static/chunks/app/layout-407395fa59b37eeb.js\"],\"ThemeProvider\"]\n3:I[38382,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\"static/chunks/app/layout-407395fa59b37eeb.js\"],\"Sheet\"]\n4:I[38382,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\"static/chunks/app/layout-407395fa59b37eeb.js\"],\"SheetTrigger\"]\n5:I[38382,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\"static/chunks/app/layout-407395fa59b37eeb.js\"],\"SheetContent\"]\n6:I[6874,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"890\",\"static/chunks/890-61fade20c36210a2.js\",\"974\",\"static/chunks/app/page-229433744b094fb7.js\"],\"\"]\n7:I[77153,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\"static/chunks/app/layout-407395fa59b37eeb.js\"],\"LanguageSwitcher\"]\n8:I[57581,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\"static/chunks/app/layout-407395fa59b37eeb.js\"],\"ThemeToggle\"]\n9:I[87555,[],\"\"]\na:I[31295,[],\"\"]\nb:I[52558,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"847\",\"static/chunks/847-bec0586593654b13.js\",\"633\",\"static/chunks/633-8e6ad4fa3651a343.js\",\"177\",\""])</script>
+<script>self.__next_f.push([1, "static/chunks/app/layout-407395fa59b37eeb.js\"],\"Toaster\"]\nc:I[60723,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"890\",\"static/chunks/890-61fade20c36210a2.js\",\"974\",\"static/chunks/app/page-229433744b094fb7.js\"],\"default\"]\nd:I[97469,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"890\",\"static/chunks/890-61fade20c36210a2.js\",\"974\",\"static/chunks/app/page-229433744b094fb7.js\"],\"default\"]\ne:I[50426,[\"650\",\"static/chunks/650-06917b1dad977b3d.js\",\"874\",\"static/chunks/874-eab1d44d4ab8f06d.js\",\"890\",\"static/chunks/890-61fade20c36210a2.js\",\"974\",\"static/chunks/app/page-229433744b094fb7.js\"],\"default\"]\nf:I[59665,[],\"MetadataBoundary\"]\n11:I[59665,[],\"OutletBoundary\"]\n14:I[74911,[],\"AsyncMetadataOutlet\"]\n16:I[59665,[],\"ViewportBoundary\"]\n18:I[26614,[],\"\"]\n:HL[\"/_next/static/css/e046beca5e33b633.css\",\"style\"]\n"])</script>
+<script>self.__next_f.push([1, "0:{\"P\":null,\"b\":\"PxSMmNqbigVMxctu85Aek\",\"p\":\"\",\"c\":[\"\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"__PAGE__\",{}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/e046beca5e33b633.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"en\",\"suppressHydrationWarning\":true,\"children\":[\"$\",\"body\",null,{\"className\":\"__className_e8ce0c antialiased\",\"children\":[\"$\",\"$L2\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60\",\"children\":[\"$\",\"div\",null,{\"className\":\"container flex h-14 max-w-screen-2xl items-center justify-between px-4 md:px-6\",\"children\":[[\"$\",\"div\",null,{\"className\":\"flex items-center\",\"children\":[[\"$\",\"$L3\",null,{\"children\":[[\"$\",\"$L4\",null,{\"asChild\":true,\"children\":[\"$\",\"button\",null,{\"className\":\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [\u0026_svg]:pointer-events-none [\u0026_svg]:size-4 [\u0026_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 w-10 md:hidden mr-2\",\"ref\":\"$undefined\",\"children\":[[\"$\",\"svg\",null,{\"ref\":\"$undefined\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-menu h-5 w-5\",\"children\":[[\"$\",\"line\",\"1e0a9i\",{\"x1\":\"4\",\"x2\":\"20\",\"y1\":\"12\",\"y2\":\"12\"}],[\"$\",\"line\",\"1owob3\",{\"x1\":\"4\",\"x2\":\"20\",\"y1\":\"6\",\"y2\":\"6\"}],[\"$\",\"line\",\"yk5zj1\",{\"x1\":\"4\",\"x2\":\"20\",\"y1\":\"18\",\"y2\":\"18\"}],\"$undefined\"]}],[\"$\",\"span\",null,{\"className\":\"sr-only\",\"children\":\"Toggle Menu\"}]]}]}],[\"$\",\"$L5\",null,{\"side\":\"left\",\"className\":\"pr-0 pt-8 sm:max-w-xs\",\"children\":[[\"$\",\"$L6\",null,{\"href\":\"/\",\"className\":\"flex items-center space-x-2 mb-6 px-4\",\"children\":[[\"$\",\"svg\",null,{\"ref\":\"$undefined\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-house h-6 w-6 text-primary text-shadow-neon-primary\",\"children\":[[\"$\",\"path\",\"5wwlr5\",{\"d\":\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"}],[\"$\",\"path\",\"1d0kgt\",{\"d\":\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"}],\"$undefined\"]}],[\"$\",\"span\",null,{\"className\":\"font-bold text-lg\",\"children\":\"IAPES Prep\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex flex-col space-y-3 px-4\",\"children\":[[\"$\",\"$L6\",null,{\"href\":\"/login\",\"className\":\"text-md py-2 hover:text-primary transition-colors\",\"children\":\"Login\"}],[\"$\",\"$L6\",null,{\"href\":\"/register\",\"className\":\"text-md py-2 hover:text-primary transition-colors\",\"children\":\"Register\"}]]}]]}]]}],[\"$\",\"$L6\",null,{\"href\":\"/\",\"className\":\"hidden md:flex items-center space-x-2\",\"children\":[[\"$\",\"svg\",null,{\"ref\":\"$undefined\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-house h-7 w-7 text-primary text-shadow-neon-primary\",\"children\":[[\"$\",\"path\",\"5wwlr5\",{\"d\":\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"}],[\"$\",\"path\",\"1d0kgt\",{\"d\":\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"}],\"$undefined\"]}],[\"$\",\"span\",null,{\"className\":\"font-bold text-xl sm:inline-block\",\"children\":\"IAPES Prep\"}]]}]]}],[\"$\",\"div\",null,{\"className\":\"md:hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2\",\"children\":[\"$\",\"$L6\",null,{\"href\":\"/\",\"className\":\"flex items-center space-x-1.5\",\"children\":[[\"$\",\"svg\",null,{\"ref\":\"$undefined\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-house h-5 w-5 text-primary text-shadow-neon-primary\",\"children\":[[\"$\",\"path\",\"5wwlr5\",{\"d\":\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"}],[\"$\",\"path\",\"1d0kgt\",{\"d\":\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"}],\"$undefined\"]}],[\"$\",\"span\",null,{\"className\":\"font-semibold text-md\",\"children\":\"IAPES Prep\"}]]}]}],[\"$\",\"div\",null,{\"className\":\"flex items-center space-x-1 sm:space-x-2\",\"children\":[[\"$\",\"$L7\",null,{}],[\"$\",\"$L8\",null,{}],[\"$\",\"$L6\",null,{\"href\":\"/login\",\"children\":[\"$\",\"button\",null,{\"className\":\"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [\u0026_svg]:pointer-events-none [\u0026_svg]:size-4 [\u0026_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground w-9 h-9\",\"ref\":\"$undefined\",\"aria-label\":\"Login\",\"children\":[\"$\",\"svg\",null,{\"ref\":\"$undefined\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":2,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-user h-5 w-5 text-primary text-shadow-neon-primary\",\"children\":[[\"$\",\"path\",\"975kel\",{\"d\":\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"}],[\"$\",\"circle\",\"17ys0d\",{\"cx\":\"12\",\"cy\":\"7\",\"r\":\"4\"}],\"$undefined\"]}]}]}]]}]]}]}],[\"$\",\"$L9\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$La\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":404}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}],[\"$\",\"$Lb\",null,{}]]}]}]}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[[\"$\",\"main\",null,{\"className\":\"flex flex-col min-h-screen\",\"children\":[[\"$\",\"section\",null,{\"className\":\"py-16 md:py-24 lg:py-32 bg-secondary/50\",\"children\":[\"$\",\"div\",null,{\"className\":\"container mx-auto px-4\",\"children\":[\"$\",\"div\",null,{\"className\":\"grid md:grid-cols-2 gap-8 items-center\",\"children\":[[\"$\",\"div\",null,{\"children\":[[\"$\",\"h1\",null,{\"className\":\"text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-primary text-shadow-neon-primary\",\"children\":\"Unlock Your ICFES Potential\"}],[\"$\",\"p\",null,{\"className\":\"text-lg md:text-xl text-muted-foreground mb-8\",\"children\":\"Your Slogan Here: Master the Pre-ICFES Saber 11 with IAPES Prep. Personalized feedback and expert guidance.\"}],[\"$\",\"div\",null,{\"className\":\"flex space-x-4\",\"children\":[[\"$\",\"$L6\",null,{\"href\":\"/login\",\"children\":[\"$\",\"button\",null,{\"className\":\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [\u0026_svg]:pointer-events-none [\u0026_svg]:size-4 [\u0026_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon-primary h-11 rounded-md px-8\",\"ref\":\"$undefined\",\"children\":\"Login\"}]}],[\"$\",\"$L6\",null,{\"href\":\"/register\",\"children\":[\"$\",\"button\",null,{\"className\":\"inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [\u0026_svg]:pointer-events-none [\u0026_svg]:size-4 [\u0026_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8\",\"ref\":\"$undefined\",\"children\":\"Register\"}]}]]}]]}],[\"$\",\"div\",null,{\"className\":\"hidden md:flex justify-center items-center\",\"children\":[\"$\",\"svg\",null,{\"ref\":\"$undefined\",\"xmlns\":\"http://www.w3.org/2000/svg\",\"width\":24,\"height\":24,\"viewBox\":\"0 0 24 24\",\"fill\":\"none\",\"stroke\":\"currentColor\",\"strokeWidth\":1.5,\"strokeLinecap\":\"round\",\"strokeLinejoin\":\"round\",\"className\":\"lucide lucide-dog w-48 h-48 lg:w-64 lg:h-64 text-primary opacity-75 text-shadow-neon-primary\",\"children\":[[\"$\",\"path\",\"w7jh35\",{\"d\":\"M11.25 16.25h1.5L12 17z\"}],[\"$\",\"path\",\"1lajdz\",{\"d\":\"M16 14v.5\"}],[\"$\",\"path\",\"u7s9ue\",{\"d\":\"M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309\"}],[\"$\",\"path\",\"1nzgdb\",{\"d\":\"M8 14v.5\"}],[\"$\",\"path\",\"v8hric\",{\"d\":\"M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5\"}],\"$undefined\"]}]}]]}]}]}],[\"$\",\"$Lc\",null,{}],[\"$\",\"$Ld\",null,{}],[\"$\",\"$Le\",null,{}],[\"$\",\"footer\",null,{\"className\":\"py-8 bg-muted text-muted-foreground text-center\",\"children\":[\"$\",\"div\",null,{\"className\":\"container mx-auto px-4\",\"children\":[[\"$\",\"p\",null,{\"children\":[\"© \",2025,\" IAPES Prep. All rights reserved.\"]}],[\"$\",\"p\",null,{\"className\":\"text-sm mt-1\",\"children\":\"Your partner for ICFES Saber 11 success.\"}]]}]}]]}],[\"$\",\"$Lf\",null,{\"children\":\"$L10\"}],null,[\"$\",\"$L11\",null,{\"children\":[\"$L12\",\"$L13\",[\"$\",\"$L14\",null,{\"promise\":\"$@15\"}]]}]]}],{},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$1\",\"wPDa40vc-REvehgFwESQf\",{\"children\":[[\"$\",\"$L16\",null,{\"children\":\"$L17\"}],null]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$18\",\"$undefined\"],\"s\":false,\"S\":true}\n"])</script>
+<script>self.__next_f.push([1, "19:\"$Sreact.suspense\"\n1a:I[74911,[],\"AsyncMetadata\"]\n10:[\"$\",\"$19\",null,{\"fallback\":null,\"children\":[\"$\",\"$L1a\",null,{\"promise\":\"$@1b\"}]}]\n"])</script>
+<script>self.__next_f.push([1, "13:null\n"])</script>
+<script>self.__next_f.push([1, "17:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n12:null\n"])</script>
+<script>self.__next_f.push([1, "1b:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"IAPES Prep - Pre-ICFES Simulator\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Your partner in preparing for the ICFES Saber 11 test.\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico\",\"type\":\"image/x-icon\",\"sizes\":\"16x16\"}]],\"error\":null,\"digest\":\"$undefined\"}\n15:{\"metadata\":\"$1b:metadata\",\"error\":null,\"digest\":\"$undefined\"}\n"])</script>
+</body>
+</html>

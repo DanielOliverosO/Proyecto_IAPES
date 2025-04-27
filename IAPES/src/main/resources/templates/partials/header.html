@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <style>
+        /* Estilos base para efectos neon */
+        .text-shadow-neon-primary {
+            text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
+        }
+        .shadow-neon-primary {
+            box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
+        }
+
+        /* Personalización para modo oscuro */
+        .dark {
+            background-color: #1a202c; /* Fondo azul oscuro profundo */
+        }
+        .dark .text-shadow-neon-primary {
+            text-shadow: 0 0 5px #60a5fa, 0 0 15px #60a5fa; /* Neon azul más intenso */
+        }
+        .dark .shadow-neon-primary {
+            box-shadow: 0 0 5px #60a5fa, 0 0 15px #60a5fa; /* Sombra neon más pronunciada */
+        }
+        .dark #mobile-menu {
+            background-color: #2d3748; /* Fondo más oscuro para el menú móvil */
+        }
+        .dark .bg-white {
+            background-color: #2d3748; /* Fondo de cards y formularios */
+        }
+        .dark .border-gray-300 {
+            border-color: #4a5568; /* Borde gris oscuro */
+        }
+        .dark input {
+            background-color: #4a5568; /* Fondo de inputs */
+            color: #e2e8f0; /* Texto claro en inputs */
+        }
+        .dark input:focus {
+            border-color: #7dd3fc; /* Azul claro para foco */
+            box-shadow: 0 0 5px #7dd3fc; /* Sombra de foco */
+        }
+        .dark .text-gray-900 {
+            color: #e2e8f0; /* Texto claro en modo oscuro */
+        }
+        .dark .text-gray-500 {
+            color: #a0aec0; /* Texto gris claro */
+        }
+        .dark .hover:text-gray-500 {
+            color: #a0aec0; /* Ajuste hover */
+        }
+        .dark .bg-blue-100 {
+            background-color: #2a4365; /* Azul oscuro para el lado izquierdo */
+        }
+        .dark .btn-primary {
+            background-color: #2b6cb0; /* Botón principal más oscuro */
+        }
+        .dark .btn-primary:hover {
+            background-color: #2c5282; /* Hover más oscuro */
+        }
+        .dark .border-blue-300 {
+            border-color: #63b3ed; /* Borde azul más suave */
+        }
+        .dark .hover:bg-blue-50 {
+            background-color: #2a4365; /* Ajuste hover en modo oscuro */
+        }
+        .dark .text-blue-500 {
+            color: #7dd3fc; /* Azul claro para enlaces */
+        }
+        .dark .hover:text-blue-500 {
+            color: #7dd3fc; /* Ajuste hover */
+        }
+        .dark .bg-gray-200\/50 {
+            background-color: #2d3748; /* Fondo semitransparente */
+        }
+
+        /* Nuevo color de fondo del header */
+        header {
+            background-color: #121526; /* Color azul/negro oscuro en modo claro */
+        }
+        .dark header {
+            background-color: #0F1120; /* Variante más oscura en modo oscuro */
+        }
+
+        /* Transiciones suaves */
+        .transition-theme {
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const body = document.body;
+
+            // Verificar el tema preferido del sistema
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                body.classList.add('dark');
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>';
+            }
+
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark');
+                if (body.classList.contains('dark')) {
+                    themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                } else {
+                    themeIcon.innerHTML = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<header class="sticky top-0 z-50 w-full border-b transition-theme">
+    <div class="container mx-auto flex h-14 items-center justify-between px-4 md:px-6 max-w-screen-2xl header dark:header">
+        <!-- Mobile Menu Button -->
+        <div class="flex items-center">
+            <button id="menu-toggle" class="inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-opacity-20 hover:bg-white h-10 w-10 md:hidden mr-2 dark:hover:bg-opacity-20 dark:hover:bg-gray-100 transition-theme" type="button" aria-label="Toggle Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white dark:text-gray-200">
+                    <line x1="4" x2="20" y1="12" y2="12"></line>
+                    <line x1="4" x2="20" y1="6" y2="6"></line>
+                    <line x1="4" x2="20" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Desktop Logo -->
+            <a href="/" class="hidden md:flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7 text-white dark:text-gray-200">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                    <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span class="font-bold text-xl text-white dark:text-gray-200">IAPES Prep</span>
+            </a>
+        </div>
+        <!-- Mobile Logo -->
+        <div class="md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <a href="/" class="flex items-center space-x-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white dark:text-gray-200">
+                    <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                    <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span class="font-semibold text-md text-white dark:text-gray-200">IAPES Prep</span>
+            </a>
+        </div>
+        <!-- Right Side Buttons -->
+        <div class="flex items-center space-x-2">
+            <!-- Language Switcher (Placeholder) -->
+            <button class="inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-opacity-20 hover:bg-white w-9 h-9 text-white dark:text-gray-200 dark:hover:bg-opacity-20 dark:hover:bg-gray-100 transition-theme" type="button" aria-label="Change language">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
+                </svg>
+            </button>
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" class="inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-opacity-20 hover:bg-white w-9 h-9 text-white dark:text-gray-200 dark:hover:bg-opacity-20 dark:hover:bg-gray-100 transition-theme" type="button" aria-label="Toggle Theme">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5" id="theme-icon">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2"></path>
+                    <path d="M12 20v2"></path>
+                    <path d="m4.93 4.93 1.41 1.41"></path>
+                    <path d="m17.66 17.66 1.41 1.41"></path>
+                    <path d="M2 12h2"></path>
+                    <path d="M20 12h2"></path>
+                    <path d="m6.34 17.66-1.41 1.41"></path>
+                    <path d="m19.07 4.93-1.41 1.41"></path>
+                </svg>
+            </button>
+            <!-- Login Button -->
+            <a href="/login">
+                <button class="inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-opacity-20 hover:bg-white w-9 h-9 dark:hover:bg-opacity-20 dark:hover:bg-gray-100 transition-theme" aria-label="Login">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 text-white dark:text-gray-200">
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </a>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="bg-white shadow-lg md:hidden dark:bg-gray-800 transition-theme">
+        <div class="flex flex-col space-y-3 px-4 py-4">
+            <a href="/login" class="text-md py-2 hover:text-blue-500 dark:hover:text-blue-400 transition-theme">Login</a>
+            <a href="/register" class="text-md py-2 hover:text-blue-500 dark:hover:text-blue-400 transition-theme">Register</a>
+        </div>
+    </div>
+</header>
+</body>
+</html>

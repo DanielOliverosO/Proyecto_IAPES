@@ -9,5 +9,4 @@ public class IapesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(IapesApplication.class, args);
 	}
-
 }

@@ -1,0 +1,77 @@
+/* Neon Effects */
+.text-shadow-neon-primary {
+    text-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
+}
+.shadow-neon-primary {
+    box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6;
+}
+.shadow-neon-secondary {
+    box-shadow: 0 0 5px #10b981, 0 0 10px #10b981; /* Verde neon como alternativa */
+}
+
+/* Layout and Containers */
+.container-custom {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.section-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    @apply md:grid-cols-2;
+}
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Form Elements */
+.form-input {
+    @apply flex h-10 w-full rounded-md border border-gray-300 px-3 py-2 text-base bg-white/70 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+.form-label {
+    @apply text-sm font-medium;
+}
+.form-error {
+    @apply text-red-500 text-sm;
+}
+.form-group {
+    @apply space-y-2;
+}
+
+/* Buttons */
+.btn-primary {
+    @apply w-full h-12 rounded-md bg-blue-500 text-white font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg shadow-neon-primary;
+}
+.btn-secondary {
+    @apply w-full h-12 rounded-md border border-blue-300 bg-white text-blue-500 font-medium hover:bg-blue-50 hover:border-blue-500 text-md shadow-neon-primary flex items-center justify-center space-x-2;
+}
+.btn-icon {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium hover:bg-gray-100 w-9 h-9;
+}
+
+/* Responsive Menu */
+#mobile-menu {
+    display: none;
+}
+.menu-toggle {
+    @apply inline-flex items-center justify-center gap-2 rounded-md text-sm font-medium hover:bg-gray-100 h-10 w-10 md:hidden;
+}
+
+/* Transitions */
+.transition-smooth {
+    @apply transition duration-300 ease-in-out;
+}
+
+/* Additional Utilities */
+.text-neon {
+    @apply text-blue-500 text-shadow-neon-primary;
+}
+.bg-neon {
+    @apply bg-blue-100;
+}
