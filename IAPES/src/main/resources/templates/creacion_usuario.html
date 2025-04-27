@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 900px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .form-section {
+            padding: 20px;
+            width: 50%;
+        }
+        .form-section h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-section input,
+        .form-section select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .form-section button.google {
+            background-color: #6fa8dc;
+        }
+        .info-section {
+            width: 50%;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .info-section h1 {
+            color: #333;
+        }
+        .info-section .placeholder {
+            width: 200px;
+            height: 200px;
+            background-color: #e0e0e0;
+            margin-top: 20px;
+        }
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-self: flex-start;
+        }
+        .social-icons a img {
+            width: 24px;
+            height: 24px;
+        }
+        .date-gender-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .date-gender-container div {
+            flex: 1;
+        }
+        .terms-text, .login-text {
+            text-align: center;
+            font-size: 12px;
+            margin: 5px 0;
+        }
+        .login-text a, .terms-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        .password-container input {
+            padding-right: 40px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .password-container .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        .password-container .toggle-password img {
+            width: 24px;
+            height: 34px;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-section">
+        <h2>Regístrate</h2>
+        <div class="error" th:if="${error}" th:text="${error}"></div>
+        <form th:action="@{/registrarse}" th:object="${usuario}" method="post">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" th:field="*{nombre}" required>
+            <div class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" th:field="*{apellido}" required>
+            <div class="error" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+
+            <div class="date-gender-container">
+                <div>
+                    <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                    <input type="date" id="fecha-nacimiento" th:field="*{fecha_Na}" required>
+                    <div class="error" th:if="${#fields.hasErrors('fecha_Na')}" th:errors="*{fecha_Na}"></div>
+                </div>
+                <div>
+                    <label for="genero">Género</label>
+                    <select id="genero" th:field="*{genero}" required>
+                        <option value="mujer">Mujer</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <div class="error" th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}"></div>
+                </div>
+            </div>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" th:field="*{email}" required>
+            <div class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+
+            <label for="contrasena">Contraseña</label>
+            <div class="password-container">
+                <input type="password" id="contrasena" th:field="*{contrasena}" required>
+                <span class="toggle-password" onclick="togglePassword()">
+                    <img th:src="@{/images/ojo_contrasena.png}" alt="Toggle Password">
+                </span>
+            </div>
+            <div class="error" th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}"></div>
+
+            <button type="submit">Continuar</button>
+            <p class="terms-text">Con la creación de la cuenta indicas que estás de acuerdo con los <a href="#">términos y condiciones</a></p>
+            <button type="button" class="google">Vincular cuenta de Google</button>
+            <p class="login-text">¿Ya tienes una cuenta? <a href="#">¡Inicia sesión!</a></p>
+        </form>
+    </div>
+    <div class="info-section">
+        <h1>¡Es hora de comenzar tu proceso de aprendizaje!</h1>
+        <div class="placeholder"></div>
+        <div class="social-icons">
+            <a href="https://www.google.com" target="_blank"><img th:src="@{/images/google.png}" alt="Google"></a>
+            <a href="https://www.facebook.com" target="_blank"><img th:src="@{/images/facebook_simbol.png}" alt="Facebook"></a>
+            <a href="https://www.instagram.com" target="_blank"><img th:src="@{/images/instagram.png}" alt="Instagram"></a>
+            <a href="https://www.twitter.com" target="_blank"><img th:src="@{/images/twitter.png}" alt="Twitter"></a>
+            <a href="https://www.discord.com" target="_blank"><img th:src="@{/images/discord.png}" alt="Discord"></a>
+            <a href="#" target="_blank"><img th:src="@{/images/group.png}" alt="Group"></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById("contrasena");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+</script>
+</body>
+</html>
