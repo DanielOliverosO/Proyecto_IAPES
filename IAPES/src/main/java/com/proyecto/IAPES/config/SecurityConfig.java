@@ -20,7 +20,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
                                 .requestMatchers("/login", "/register", "/", "/css/**", "/js/**", "/webjars/**", "/favicon.ico").permitAll()
-                                .requestMatchers("/subjects", "/profile/**").authenticated()
+                                .requestMatchers("/geometria", "/subjects", "/profile/**").authenticated() // Añade /geometria a authenticated
                                 .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
@@ -29,8 +29,8 @@ public class SecurityConfig {
                                 .loginProcessingUrl("/login")
                                 .usernameParameter("correo")
                                 .passwordParameter("contrasena")
-                                .defaultSuccessUrl("/subjects", true) // Redirige a /subjects tras login exitoso
-                                .failureUrl("/login?error") // Redirige con error si falla
+                                .defaultSuccessUrl("/subjects", true)
+                                .failureUrl("/login?error")
                                 .permitAll()
                 )
                 .logout(logout ->
@@ -44,37 +44,19 @@ public class SecurityConfig {
                 .csrf(csrf ->
                         csrf
                                 .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                                .ignoringRequestMatchers("/api/**") // Ignora CSRF para APIs si las tienes
+                                .ignoringRequestMatchers("/api/**")
                 )
                 .exceptionHandling(exceptions ->
                         exceptions
                                 .accessDeniedPage("/access-denied")
                 )
-                .userDetailsService(userDetailsService); // Usa el UserDetailsService personalizado
+                .userDetailsService(userDetailsService);
 
         return http.build();
     }
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(12); // Costo ajustado a 12 para seguridad en 2025
+        return new BCryptPasswordEncoder(12);
     }
-
-    // Opcional: Configuración para OAuth2 (descomenta si lo usas)
-    /*
-    @Bean
-    public SecurityFilterChain oauth2SecurityFilterChain(HttpSecurity http) throws Exception {
-        http
-            .authorizeHttpRequests(authorizeRequests ->
-                authorizeRequests.anyRequest().authenticated()
-            )
-            .oauth2Login(oauth2 ->
-                oauth2
-                    .loginPage("/login")
-                    .defaultSuccessUrl("/subjects", true)
-                    .failureUrl("/login?error")
-            );
-        return http.build();
-    }
-    */
 }

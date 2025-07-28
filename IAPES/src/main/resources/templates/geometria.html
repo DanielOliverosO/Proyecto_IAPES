@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Geometría - IAPES Prep</title>
+    <meta name="description" content="Your partner in preparing for the ICFES Saber 11 test.">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.441.0/dist/umd/lucide.min.js"></script>
+    <style>
+        /* Neon effects */
+        .text-shadow-neon-primary {
+            text-shadow: 0 0 5px #0E71FB, 0 0 10px #0E71FB;
+        }
+        .shadow-neon-primary {
+            box-shadow: 0 0 5px #0E71FB, 0 0 10px #0E71FB;
+        }
+
+        /* Dark mode styles */
+        .dark {
+            background-color: #121526;
+        }
+        .dark .text-shadow-neon-primary {
+            text-shadow: 0 0 10px #0E71FB, 0 0 15px #0E71FB;
+        }
+        .dark .shadow-neon-primary {
+            box-shadow: 0 0 5px #0E71FB, 0 0 15px #0E71FB;
+        }
+
+        /* Containers */
+        .login-container {
+            background-color: #F5F7FA;
+        }
+        .dark .login-container {
+            background-color: #121526;
+        }
+        .left-side {
+            background-color: #E6F0FA;
+        }
+        .dark .left-side {
+            background-color: #142446;
+        }
+        .form-container {
+            background-color: #FFFFFF;
+        }
+        .dark .form-container {
+            background-color: #14182c;
+        }
+
+        /* Text and titles */
+        .title-light {
+            color: #0E71FB;
+        }
+        .dark .title-light {
+            color: #0E71FB;
+        }
+        .text-description {
+            color: #6B7280;
+        }
+        .dark .text-description {
+            color: #A0AEC0;
+        }
+
+        /* Form elements */
+        .form-label {
+            color: #1F2937;
+        }
+        .dark .form-label {
+            color: #E5E7EB;
+        }
+        .form-input {
+            background-color: #F9FAFB;
+            border-color: #D1D5DB;
+        }
+        .dark .form-input {
+            background-color: #121526;
+            border-color: #202846;
+            color: #E2E8F0;
+        }
+        .form-input:focus {
+            border-color: #0E71FB;
+            box-shadow: 0 0 5px #0E71FB;
+        }
+        .dark .form-input:focus {
+            border-color: #7DD3FC;
+            box-shadow: 0 0 5px #7DD3FC;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background-color: #0E71FB;
+            color: #FFFFFF;
+        }
+        .dark .btn-primary {
+            background-color: #0E71FB;
+        }
+        .btn-primary:hover {
+            background-color: #0A57C2;
+        }
+        .dark .btn-primary:hover {
+            background-color: #0A57C2;
+        }
+
+        /* Divider */
+        .divider {
+            border-color: #D1D5DB;
+        }
+        .dark .divider {
+            border-color: #4A5568;
+        }
+
+        /* Links */
+        .link-text {
+            color: #6B7280;
+        }
+        .dark .link-text {
+            color: #A0AEC0;
+        }
+        .link-hover {
+            color: #0E71FB;
+        }
+        .dark .link-hover {
+            color: #7DD3FC;
+        }
+
+        /* Chart colors */
+        .dark .chart-grid {
+            color: #4A5568;
+        }
+        .dark .chart-labels {
+            color: #E5E7EB;
+        }
+        .sidebar {
+            max-width: 300px !important;
+            width: 100%;
+        }
+        .titleP{
+            max-width: 240px !important;
+        }
+
+        /* Transitions */
+        .transition-theme {
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Carousel styles */
+        .carousel-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel-item {
+            flex: 0 0 100%;
+            padding: 16px;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            background-color: #E6F0FA;
+        }
+        .dark .carousel-item {
+            border-color: #4A5568;
+            background-color: #142446;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0E71FB;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .carousel-button:hover {
+            background-color: #0A57C2;
+        }
+        .carousel-button.left {
+            left: -40px;
+        }
+        .carousel-button.right {
+            right: -40px;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .carousel-nav-button {
+            width: 12px;
+            height: 12px;
+            background-color: #D1D5DB;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .carousel-nav-button.active {
+            background-color: #0E71FB;
+        }
+        .dark .carousel-nav-button {
+            background-color: #4A5568;
+        }
+        .dark .carousel-nav-button.active {
+            background-color: #7DD3FC;
+        }
+        .video-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            background-color: #0E71FB;
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .video-button:hover {
+            background-color: #0A57C2;
+        }
+    </style>
+</head>
+<body class="antialiased bg-gray-100 transition-theme dark:bg-[#121526]" id="body">
+<div th:replace="~{/partials/header :: header}"></div>
+<div class="rounded-xl shadow-2xl w-full flex flex-col md:flex-row overflow-hidden login-container">
+    <!-- Contenido principal -->
+    <div class="flex-1 flex flex-col p-8 sm:p-10 lg:p-12">
+        <div class="flex gap-8 mb-8">
+            <div class="flex flex-col flex-grow">
+                <div class="flex flex-col mb-6 titleP">
+                    <h1 class="text-5xl font-bold title-light text-shadow-neon-primary text-left">Geometría</h1>
+                    <div class="flex items-center w-full mt-1">
+                        <div class="flex-grow border-t divider"></div>
+                        <p class="text-sm text-description mx-4">Matemáticas</p>
+                        <div class="flex-grow border-t divider"></div>
+                    </div>
+                </div>
+                <div class="border divider rounded-lg p-4 bg-[#E6F0FA] dark:bg-[#142446] mt-6 transition-theme">
+                    <p class="text-description">
+                        La geometría es una rama de las matemáticas que estudia las propiedades y relaciones de figuras y espacios, analizando formas, tamaños y posiciones de elementos como puntos, líneas, planos y volúmenes. Abarca desde la geometría euclidiana, que explora espacios planos, hasta la no euclidiana, analítica, diferencial y topología, utilizando axiomas, teoremas y coordenadas. Es esencial en arquitectura, física, informática y arte, modelando desde estructuras y trayectorias hasta gráficos 3D y perspectivas.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-4">
+                <i data-lucide="dog" class="w-24 h-24 lg:w-32 lg:h-32 title-light opacity-75 text-shadow-neon-primary"></i>
+                <div class="w-32 h-56 border divider rounded-lg flex items-center justify-center bg-[#E6F0FA] dark:bg-[#142446] transition-theme">
+                    <div class="text-6xl">🦴</div>
+                </div>
+            </div>
+        </div>
+        <div class="p-4 pt-0">
+            <div th:text="'Modelo allAreasData: ' + ${allAreasData}" style="display:none;">Modelo: No procesado</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-description">Te va bien en:</h3>
+                    <ul id="strengthsList" class="text-description"></ul>
+                    <h3 class="text-lg font-semibold mt-4 mb-2 text-description">Debes Mejorar:</h3>
+                    <ul id="areasToImproveList" class="text-description"></ul>
+                </div>
+                <div class="flex items-center justify-center">
+                    <canvas id="radarChart" class="w-96 h-96"></canvas>
+                </div>
+            </div>
+            <div class="flex items-center w-full mt-8 mb-4">
+                <div class="flex-grow border-t-2 divider"></div>
+                <p class="text-base text-description mx-4 font-bold">//</p>
+                <div class="flex-grow border-t-2 divider"></div>
+            </div>
+            <h3 class="text-lg font-semibold mt-8 mb-2 text-description">Recomendaciones</h3>
+            <div class="carousel-container">
+                <button class="carousel-button left" onclick="moveCarousel(-1)">❮</button>
+                <div class="carousel" id="carousel">
+                    <div class="carousel-item">
+                        <h4 class="text-lg font-semibold text-description mb-2">Áreas y Perímetros</h4>
+                        <a href="https://www.youtube.com/watch?v=example1" target="_blank" class="video-button">Video: Cálculo de Áreas</a>
+                        <a href="https://www.youtube.com/watch?v=example2" target="_blank" class="video-button">Video: Perímetros de Figuras Planas</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="text-lg font-semibold text-description mb-2">Teorema de Pitágoras</h4>
+                        <a href="https://www.youtube.com/watch?v=example3" target="_blank" class="video-button">Video: Introducción al Teorema</a>
+                        <a href="https://www.youtube.com/watch?v=example4" target="_blank" class="video-button">Video: Aplicaciones Prácticas</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="text-lg font-semibold text-description mb-2">Semejanza de Triángulos</h4>
+                        <a href="https://www.youtube.com/watch?v=example5" target="_blank" class="video-button">Video: Criterios de Semejanza</a>
+                        <a href="https://www.youtube.com/watch?v=example6" target="_blank" class="video-button">Video: Problemas Resueltos</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="text-lg font-semibold text-description mb-2">Geometría Analítica</h4>
+                        <a href="https://www.youtube.com/watch?v=example7" target="_blank" class="video-button">Video: Coordenadas Cartesianas</a>
+                        <a href="https://www.youtube.com/watch?v=example8" target="_blank" class="video-button">Video: Ecuaciones de la Recta</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="text-lg font-semibold text-description mb-2">Trigonometría</h4>
+                        <a href="https://www.youtube.com/watch?v=example9" target="_blank" class="video-button">Video: Funciones Trigonométricas</a>
+                        <a href="https://www.youtube.com/watch?v=example10" target="_blank" class="video-button">Video: Identidades Trigonométricas</a>
+                    </div>
+                    <div class="carousel-item">
+                        <h4 class="text-lg font-semibold text-description mb-2">Volúmenes y Áreas</h4>
+                        <a href="https://www.youtube.com/watch?v=example11" target="_blank" class="video-button">Video: Volúmenes de Sólidos</a>
+                        <a href="https://www.youtube.com/watch?v=example12" target="_blank" class="video-button">Video: Áreas Superficiales</a>
+                    </div>
+                </div>
+                <button class="carousel-button right" onclick="moveCarousel(1)">❯</button>
+                <div class="carousel-nav">
+                    <span class="carousel-nav-button active" onclick="goToSlide(0)"></span>
+                    <span class="carousel-nav-button" onclick="goToSlide(1)"></span>
+                    <span class="carousel-nav-button" onclick="goToSlide(2)"></span>
+                    <span class="carousel-nav-button" onclick="goToSlide(3)"></span>
+                    <span class="carousel-nav-button" onclick="goToSlide(4)"></span>
+                    <span class="carousel-nav-button" onclick="goToSlide(5)"></span>
+                </div>
+            </div>
+            <h3 class="text-lg font-semibold mt-8 mb-2 text-description">Ponte a Prueba!</h3>
+            <div class="border divider p-4 rounded bg-[#E6F0FA] dark:bg-[#142446] transition-theme">Content for "Ponte a Prueba!"</div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="border-l divider p-2 hidden md:block bg-[#E6F0FA] dark:bg-[#142446] transition-theme sidebar overflow-x-auto">
+        <div class="flex items-center space-x-1">
+            <input type="checkbox" id="showCalendar" class="h-4 w-4 text-[#0E71FB] focus:ring-[#0E71FB] border-[#D1D5DB] dark:border-[#202846] rounded transition-theme">
+            <label for="showCalendar" class="text-2xl font-bold form-label">Calendario</label>
+        </div>
+        <div id="calendar" class="mt-2 hidden">
+            <div class="border divider p-2 rounded bg-[#E6F0FA] dark:bg-[#142446] transition-theme">Calendario no implementado</div>
+        </div>
+        <div class="flex items-center space-x-1 mt-2">
+            <input type="checkbox" id="showTimer" class="h-4 w-4 text-[#0E71FB] focus:ring-[#0E71FB] border-[#D1D5DB] dark:border-[#202846] rounded transition-theme">
+            <label for="showTimer" class="text-2xl font-bold form-label">Temporizador</label>
+        </div>
+        <div id="timer" class="mt-2 hidden">
+            <div class="p-2 border divider rounded transition-theme">
+                <h4 id="timerPhase" class="text-sm font-semibold mb-1 capitalize text-description">Trabajo</h4>
+                <div id="timerDisplay" class="text-xl font-bold text-center mb-2 text-description">25:00</div>
+                <div class="flex justify-center space-x-1 mb-2">
+                    <button id="startPauseBtn" class="px-2 py-1 btn-primary rounded transition-theme text-xs">Iniciar</button>
+                    <button id="resetBtn" class="px-2 py-1 bg-[#6B7280] dark:bg-[#4A5568] text-white rounded transition-theme text-xs">Reiniciar</button>
+                </div>
+                <div class="mb-2">
+                    <h5 class="font-semibold mb-1 text-description text-xs">Configuración (min):</h5>
+                    <div class="flex flex-col space-y-1">
+                        <div class="flex items-center space-x-1">
+                            <label for="workDurationInput" class="text-xs form-label"> Trabajo:</label>
+                            <input id="workDurationInput" type="number" min="1" value="25" class="w-10 px-1 py-0.5 form-input rounded transition-theme text-xs">
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            <label for="shortBreakDurationInput" class="text-xs form-label">Descanso:</label>
+                            <input id="shortBreakDurationInput" type="number" min="1" value="5" class="w-10 px-1 py-0.5 form-input rounded transition-theme text-xs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Theme Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.getElementById('body');
+        const icon = document.getElementById('theme-icon');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                if (body.classList.contains('dark')) {
+                    body.classList.remove('dark');
+                    if (icon) icon.innerHTML = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>';
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    body.classList.add('dark');
+                    if (icon) icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        }
+        const savedTheme = localStorage.getItem('theme');
+        body.classList.remove('dark');
+        if (icon) icon.innerHTML = '<circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>';
+        if (savedTheme === 'dark') {
+            body.classList.add('dark');
+            if (icon) icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+        }
+    });
+
+    // Inyectar el modelo allAreasData desde el controlador
+    const allAreasData = /*[[${allAreasData}]]*/ {
+        ayFpPercentage: 0,
+        tpPercentage: 0,
+        stPercentage: 0,
+        gabPercentage: 0,
+        tPercentage: 0,
+        vyAsPercentage: 0
+    } || {};
+
+    // Depuración: Verifica los datos inyectados
+    console.log('Datos inyectados por Thymeleaf:', allAreasData);
+
+    // Convertir los datos a un arreglo de objetos compatible con el gráfico y las listas
+    const areasDataArray = [
+        { area: '(AyFp) Áreas y perímetros de figuras planas', percentage: allAreasData.ayFpPercentage || 0 },
+        { area: '(Tp) Teorema de Pitágoras', percentage: allAreasData.tpPercentage || 0 },
+        { area: '(St) Semejanza de triángulos', percentage: allAreasData.stPercentage || 0 },
+        { area: '(Gab) Geometría analítica básica', percentage: allAreasData.gabPercentage || 0 },
+        { area: '(T) Trigonometría', percentage: allAreasData.tPercentage || 0 },
+        { area: '(VyAs) Volúmenes y áreas de sólidos', percentage: allAreasData.vyAsPercentage || 0 }
+    ];
+
+    console.log('Datos en areasDataArray:', areasDataArray.map(item => item.percentage));
+
+    // [Resto del código para listas, gráfico, temporizador, etc., permanece igual]
+    const areaAbbreviations = {
+        '(AyFp) Áreas y perímetros de figuras planas': 'AyFp',
+        '(Tp) Teorema de Pitágoras': 'Tp',
+        '(St) Semejanza de triángulos': 'St',
+        '(Gab) Geometría analítica básica': 'Gab',
+        '(T) Trigonometría': 'T',
+        '(VyAs) Volúmenes y áreas de sólidos': 'VyAs'
+    };
+
+    const allAreas = Object.values(areaAbbreviations);
+    const combinedData = allAreas.map(area => {
+        const originalArea = Object.keys(areaAbbreviations).find(key => areaAbbreviations[key] === area);
+        const item = areasDataArray.find(item => item.area === originalArea);
+        return item ? item.percentage : 0;
+    });
+
+    // Generar listas de fortalezas y áreas a mejorar
+    const strengthsList = document.getElementById('strengthsList');
+    const areasToImproveList = document.getElementById('areasToImproveList');
+
+    strengthsList.innerHTML = ''; // Limpiar lista existente
+    areasToImproveList.innerHTML = ''; // Limpiar lista existente
+
+    const strengths = areasDataArray.filter(item => item.percentage >= 70);
+    const areasToImprove = areasDataArray.filter(item => item.percentage < 70);
+
+    strengths.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.area}: ${item.percentage}%`;
+        strengthsList.appendChild(li);
+    });
+
+    areasToImprove.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.area}: ${item.percentage}%`;
+        areasToImproveList.appendChild(li);
+    });
+
+    // Chart.js Radar Chart
+    const ctx = document.getElementById('radarChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: allAreas,
+            datasets: [{
+                label: 'Rendimiento General',
+                data: combinedData,
+                backgroundColor: 'rgba(14, 113, 251, 0.5)',
+                borderColor: 'rgba(14, 113, 251, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    angleLines: { display: false, color: 'rgba(255, 255, 255, 0.2)' },
+                    suggestedMin: 0,
+                    suggestedMax: 100,
+                    pointLabels: { font: { size: 16 }, color: '#1F2937', className: 'chart-labels' },
+                    grid: { color: '#D1D5DB', lineWidth: 3, className: 'chart-grid' },
+                    ticks: { color: '#6B7280', backdropColor: 'transparent', stepSize: 20 }
+                }
+            },
+            plugins: { legend: { display: false } }
+        }
+    });
+
+    // [Resto del código del temporizador, calendario y carrusel permanece igual]
+    // Timer Logic
+    let workDuration = 25;
+    let shortBreakDuration = 5;
+    let timeLeft = workDuration * 60;
+    let isRunning = false;
+    let phase = 'work';
+    let intervalId = null;
+
+    const timerDisplay = document.getElementById('timerDisplay');
+    const timerPhase = document.getElementById('timerPhase');
+    const startPauseBtn = document.getElementById('startPauseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const workDurationInput = document.getElementById('workDurationInput');
+    const shortBreakDurationInput = document.getElementById('shortBreakDurationInput');
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+    }
+
+    function updateTimerDisplay() {
+        timerDisplay.textContent = formatTime(timeLeft);
+        timerPhase.textContent = phase.replace('-', ' ');
+    }
+
+    function startTimer() {
+        if (!isRunning) {
+            isRunning = true;
+            startPauseBtn.textContent = 'Pausar';
+            intervalId = setInterval(() => {
+                timeLeft--;
+                updateTimerDisplay();
+                if (timeLeft <= 0) {
+                    phase = phase === 'work' ? 'short-break' : 'work';
+                    timeLeft = phase === 'work' ? workDuration * 60 : shortBreakDuration * 60;
+                    isRunning = false;
+                    startPauseBtn.textContent = 'Iniciar';
+                    clearInterval(intervalId);
+                    updateTimerDisplay();
+                }
+            }, 1000);
+        } else {
+            isRunning = false;
+            startPauseBtn.textContent = 'Iniciar';
+            clearInterval(intervalId);
+        }
+    }
+
+    function resetTimer() {
+        isRunning = false;
+        phase = 'work';
+        timeLeft = workDuration * 60;
+        startPauseBtn.textContent = 'Iniciar';
+        clearInterval(intervalId);
+        updateTimerDisplay();
+    }
+
+    startPauseBtn.addEventListener('click', startTimer);
+    resetBtn.addEventListener('click', resetTimer);
+    workDurationInput.addEventListener('change', (e) => {
+        workDuration = parseInt(e.target.value) || 25;
+        if (!isRunning && phase === 'work') {
+            timeLeft = workDuration * 60;
+            updateTimerDisplay();
+        }
+    });
+    shortBreakDurationInput.addEventListener('change', (e) => {
+        shortBreakDuration = parseInt(e.target.value) || 5;
+        if (!isRunning && phase === 'short-break') {
+            timeLeft = shortBreakDuration * 60;
+            updateTimerDisplay();
+        }
+    });
+
+    // Show/Hide Calendar and Timer
+    document.getElementById('showCalendar').addEventListener('change', (e) => {
+        document.getElementById('calendar').classList.toggle('hidden', !e.target.checked);
+    });
+    document.getElementById('showTimer').addEventListener('change', (e) => {
+        document.getElementById('timer').classList.toggle('hidden', !e.target.checked);
+    });
+
+    // Carousel Logic
+    let currentSlide = 0;
+    const carousel = document.getElementById('carousel');
+    const navButtons = document.querySelectorAll('.carousel-nav-button');
+    const totalSlides = navButtons.length;
+
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        navButtons.forEach((button, index) => {
+            button.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function moveCarousel(direction) {
+        currentSlide += direction;
+        if (currentSlide < 0) {
+            currentSlide = totalSlides - 1;
+        } else if (currentSlide >= totalSlides) {
+            currentSlide = 0;
+        }
+        updateCarousel();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+
+    // Initial carousel setup
+    updateCarousel();
+
+    // Initial timer display
+    updateTimerDisplay();
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.proyecto.IAPES.services;
 
 import com.proyecto.IAPES.model.CreacionUsuarios;
+import com.proyecto.IAPES.model.CustomUserDetails;
 import com.proyecto.IAPES.repo.CreacionUsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,10 +24,11 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (usuario == null) {
             throw new UsernameNotFoundException("Usuario no encontrado con correo: " + email);
         }
-        return new org.springframework.security.core.userdetails.User(
-                usuario.getCorreo(),
-                usuario.getContrasena(),
-                Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"))
+        return new CustomUserDetails(
+                usuario.getId_User(), // ID del usuario
+                usuario.getCorreo(),  // Username (correo)
+                usuario.getContrasena(), // Password
+                Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")) // Autoridades
         );
     }
 }
